@@ -18,8 +18,9 @@ for data_set in data_sets:
             line = '{} {}\n'.format(filepath, label)
             f_all.write(line)
 
-            line = '{} {}\n'.format(filepath, int(label))
+            line = '{} {}\n'.format(filepath, int(label/2))
             #line = '{} {}\n'.format(filepath, int(label/2)) #除以2不是很明白
+            #因为对于单独的奇/偶数模型来说就是个五分类问题，所以不需要大于4的label
             if label % 2:
                 f_odd.write(line)
             else:
